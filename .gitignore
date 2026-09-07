@@ -1,0 +1,26 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Blender generated files
+*.blend
+*.blend1
+*.blend2
+*.glb
+*.gltf
+
+# Render/output folders
+outputs/
+renders/
+logs/
+
+# Large archives / binaries
+*.tar
+*.tar.gz
+*.zip
+
+# Local environment
+.env
+.env.*
+.DS_Store

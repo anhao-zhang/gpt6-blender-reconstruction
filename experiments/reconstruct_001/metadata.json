@@ -1,0 +1,27 @@
+{
+  "pipeline": "gpt6-blender-mcp",
+  "experiment_id": "reconstruct_001",
+  "model": "gpt-6-astra",
+  "reasoning_effort": "low",
+  "blender_version": "5.2.1",
+  "blender_mcp_commit": "4309a39",
+  "max_refinement_iterations": 5,
+  "external_assets": false,
+  "external_3d_generation": false,
+  "segmentation": false,
+  "depth": false,
+  "point_cloud": false,
+  "registration": false,
+  "inputs": [
+    "inputs/test_im1.png",
+    "inputs/image_occ8.png"
+  ],
+  "final_previews": [
+    "previews/reconstruction_final.png",
+    "previews/image_occ8_render_final.png"
+  ],
+  "notes": {
+    "test_im1": "multi-object tabletop reconstruction baseline",
+    "image_occ8": "more severe occlusion scene reconstruction baseline"
+  }
+}

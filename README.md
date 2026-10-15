@@ -8,17 +8,20 @@ This repository documents experiments in which a multimodal agent interprets a t
 
 ### Experiment 1 — Multi-object tabletop scene
 
+
 | Input image | Reconstructed render |
 |:---:|:---:|
-| ![Input tabletop scene](experiments/reconstruct_001/inputs/test_im1.png) | ![Reconstructed tabletop scene](experiments/reconstruct_001/previews/reconstruction_final.png) |
+| <img src="experiments/reconstruct_001/inputs/test_im1.png" width="450"> | <img src="experiments/reconstruct_001/previews/reconstruction_final.png" width="450"> |
+
 
 The agent approximates the tabletop, background, and visible objects (including a bottle, headphones, mouse, and pens), together with their relative placement, scale, and camera viewpoint.
 
 ### Experiment 2 — Scene with significant occlusion
 
+
 | Input image | Reconstructed render |
 |:---:|:---:|
-| ![Input occluded scene](experiments/reconstruct_001/inputs/image_occ8.png) | ![Reconstructed occluded scene](experiments/reconstruct_001/previews/image_occ8_render_final.png) |
+| <img src="experiments/reconstruct_001/inputs/image_occ8.png" width="450"> | <img src="experiments/reconstruct_001/previews/image_occ8_render_final.png" width="450"> |
 
 This experiment focuses on partially occluded objects, front-to-back ordering, approximate hidden geometry, and overall scene consistency.
 
@@ -82,9 +85,9 @@ The model-driven scene-building and refinement steps are interactive/tool-mediat
 
 ## Limitations
 
-- **Single-view ambiguity:** Object dimensions, hidden surfaces, and materials cannot be uniquely determined from one RGB image.
-- **Approximate geometry:** Reconstructions prioritize visible layout and image-level similarity rather than physically accurate geometry.
-- **No quantitative evaluation:** The repository does not report standardized reconstruction metrics or benchmark comparisons.
-- **Artifact availability:** Final render previews and traces are public, but the generated `.blend` / `.glb` scene files are not tracked in this repository. GLB export was not successful in the occlusion experiment.
+- **Single-view ambiguity:** Object dimensions, hidden surfaces, and materials cannot be uniquely determined from a single RGB image.
+- **Geometric inaccuracies:** Reconstructed objects may have inaccurate shapes, proportions, scales, or spatial arrangements compared with the reference image.
+- **Object interpenetration:** Some reconstructed objects may intersect or penetrate one another, indicating limitations in the agent's understanding of 3D geometry and physical constraints.
+- **Limited physical consistency:** Although the agent can approximate visible scene layouts, the generated geometry does not always satisfy realistic spatial and physical constraints.
 
 This is an exploratory, tool-using 3D scene reconstruction project built on existing models and Blender tooling, not a claim of a novel trained reconstruction model.
